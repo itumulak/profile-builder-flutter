@@ -23,30 +23,24 @@ class ProfileCollectionScreen extends StatelessWidget {
       return profileID.output(context);
     }
 
-    return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Text(
-            'Builders',
-            style: TextStyle(fontSize: 64),
+    return MaterialApp(
+      home: Scaffold(
+        body: Scaffold(
+          backgroundColor: Colors.black87,
+          body: SafeArea(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                getProfileBadge(context),
+                const SizedBox(
+                  height: 60,
+                ),
+                getProfileId(context)
+              ],
+            ),
           ),
-          const SizedBox(
-            height: 20,
-          ),
-          getProfileBadge(context),
-          const SizedBox(
-            height: 30,
-          ),
-          getProfileId(context),
-          const SizedBox(
-            height: 20,
-          ),
-          const Text(
-            'Builders with a Director',
-            style: TextStyle(fontSize: 64),
-          ),
-        ],
+        ),
       ),
     );
   }

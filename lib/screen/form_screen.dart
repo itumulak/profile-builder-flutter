@@ -19,13 +19,13 @@ class _FormScreenState extends State<FormScreen> {
   @override
   Widget build(BuildContext context) {
     final formKey = GlobalKey<FormState>();
-    final firstNameController = TextEditingController();
-    final lastNameController = TextEditingController();
-    final emailAddressController = TextEditingController();
-    final professionController = TextEditingController();
-    final ageController = TextEditingController();
-    final phoneController = TextEditingController();
-    final addressController = TextEditingController();
+    final firstNameController = TextEditingController(text: 'Ian');
+    final lastNameController = TextEditingController(text: 'Tumulak');
+    final emailAddressController = TextEditingController(text: 'xxxxxxx@gmail.com');
+    final professionController = TextEditingController(text: 'Flutter Developer');
+    final ageController = TextEditingController(text: '');
+    final phoneController = TextEditingController(text: '');
+    final addressController = TextEditingController(text: '');
     final userProvider = Provider.of<User>(context);
 
     void submitInfo() {
@@ -40,89 +40,84 @@ class _FormScreenState extends State<FormScreen> {
 
     return SafeArea(
         child: Scaffold(
-          body: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SingleChildScrollView(
-                child: Center(
-                  child: SizedBox(
-                    width: 300,
-                    child: Form(
-                        key: formKey,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            InputField(
-                              labelText: 'First name',
-                              controller: firstNameController,
-                              prerequisite: isRequired,
-                            ),
-                            const SizedBox(
-                              height: 15,
-                            ),
-                            InputField(
-                              labelText: 'Last name',
-                              controller: lastNameController,
-                              prerequisite: isRequired,
-                            ),
-                            const SizedBox(
-                              height: 15,
-                            ),
-                            InputField(
-                              labelText: 'Email address',
-                              controller: emailAddressController,
-                              prerequisite: isEmail,
-                            ),
-                            const SizedBox(
-                              height: 15,
-                            ),
-                            InputField(
-                              labelText: 'Profession',
-                              controller: professionController,
-                              prerequisite: isRequired,
-                            ),
-                            const SizedBox(
-                              height: 15,
-                            ),
-                            InputField(
-                              labelText: 'Age',
-                              controller: ageController,
-                              numberInputOnly: true,
-                            ),
-                            const SizedBox(
-                              height: 15,
-                            ),
-                            InputField(
-                              labelText: 'Phone number',
-                              controller: phoneController,
-                              numberInputOnly: true,
-                            ),
-                            const SizedBox(
-                              height: 15,
-                            ),
-                            InputField(
-                              labelText: 'Address',
-                              controller: addressController,
-                            ),
-                            const SizedBox(
-                              height: 15,
-                            ),
-                            ElevatedButton(
-                              onPressed: () {
-                                if ( formKey.currentState!.validate() ) {
-                                  submitInfo();
-                                  Navigator.pushNamed(context, ProfileCollectionScreen.route);
-                                }
-                              },
-                              child: const Text('Submit'),
-                            ),
-                          ],
-                        )
+          body: Center(
+            child: SizedBox(
+              width: 300,
+              child: Form(
+                  key: formKey,
+                  child: SingleChildScrollView(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        InputField(
+                          labelText: 'First name',
+                          controller: firstNameController,
+                          prerequisite: isRequired,
+                        ),
+                        const SizedBox(
+                          height: 15,
+                        ),
+                        InputField(
+                          labelText: 'Last name',
+                          controller: lastNameController,
+                          prerequisite: isRequired,
+                        ),
+                        const SizedBox(
+                          height: 15,
+                        ),
+                        InputField(
+                          labelText: 'Email address',
+                          controller: emailAddressController,
+                          prerequisite: isEmail,
+                        ),
+                        const SizedBox(
+                          height: 15,
+                        ),
+                        InputField(
+                          labelText: 'Profession',
+                          controller: professionController,
+                          prerequisite: isRequired,
+                        ),
+                        const SizedBox(
+                          height: 15,
+                        ),
+                        InputField(
+                          labelText: 'Age',
+                          controller: ageController,
+                          numberInputOnly: true,
+                        ),
+                        const SizedBox(
+                          height: 15,
+                        ),
+                        InputField(
+                          labelText: 'Phone number',
+                          controller: phoneController,
+                          numberInputOnly: true,
+                        ),
+                        const SizedBox(
+                          height: 15,
+                        ),
+                        InputField(
+                          labelText: 'Address',
+                          controller: addressController,
+                        ),
+                        const SizedBox(
+                          height: 15,
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            if ( formKey.currentState!.validate() ) {
+                              submitInfo();
+                              Navigator.pushNamed(context, ProfileCollectionScreen.route);
+                            }
+                          },
+                          child: const Text('Submit'),
+                        ),
+                      ],
                     ),
-                  ),
-                ),
+                  )
               ),
-            ],
+            ),
           ),
         )
     );

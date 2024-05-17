@@ -58,6 +58,27 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  fonts:
+    - family: Pacifico
+      fonts:
+        - asset: fonts/Pacifico-Regular.ttf
+    - family: Source Code Pro
+      fonts:
+        - asset: fonts/SourceCodePro-Regular.ttf
+          style: normal
+          weight: 400
+        - asset: fonts/SourceCodePro-Bold.ttf
+          style: normal
+          weight: 500
+    - family: Source Sans 3
+      fonts:
+        - asset: fonts/SourceSans3-Regular.ttf
+          style: normal
+          weight: 400
+        - asset: fonts/SourceSans3-Bold.ttf
+          style: normal
+          weight: 500
+
 
   # To add assets to your application, add an assets section, like this:
   # assets:
