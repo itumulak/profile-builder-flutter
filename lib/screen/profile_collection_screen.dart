@@ -14,13 +14,13 @@ class ProfileCollectionScreen extends StatelessWidget {
     Widget getProfileBadge(BuildContext context) {
       profileBadge = ProfileBadge();
 
-      return profileBadge.output(context);
+      return profileBadge.buildOutput(context);
     }
 
     Widget getProfileId(BuildContext context) {
       profileID = ProfileId();
 
-      return profileID.output(context);
+      return profileID.buildOutput(context);
     }
 
     return MaterialApp(

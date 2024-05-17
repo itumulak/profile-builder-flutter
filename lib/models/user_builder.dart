@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 abstract class BuilderOutput {
-  Widget output(BuildContext context) {
+  Widget buildOutput(BuildContext context) {
     return Container();
   }
 }
@@ -118,7 +118,7 @@ class ProfileBadge extends UserBuilder {
   }
 
   @override
-  Widget output(BuildContext context) {
+  Widget buildOutput(BuildContext context) {
     getInfo(context);
 
     return Column(
@@ -162,7 +162,7 @@ class ProfileId extends UserBuilder {
   }
 
   @override
-  Widget output(BuildContext context) {
+  Widget buildOutput(BuildContext context) {
     getInfo(context);
 
     return Padding(
