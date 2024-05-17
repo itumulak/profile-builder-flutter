@@ -19,10 +19,10 @@ class _FormScreenState extends State<FormScreen> {
   @override
   Widget build(BuildContext context) {
     final formKey = GlobalKey<FormState>();
-    final firstNameController = TextEditingController(text: 'Ian');
-    final lastNameController = TextEditingController(text: 'Tumulak');
-    final emailAddressController = TextEditingController(text: 'xxxxxxx@gmail.com');
-    final professionController = TextEditingController(text: 'Flutter Developer');
+    final firstNameController = TextEditingController(text: '');
+    final lastNameController = TextEditingController(text: '');
+    final emailAddressController = TextEditingController(text: '');
+    final professionController = TextEditingController(text: '');
     final ageController = TextEditingController(text: '');
     final phoneController = TextEditingController(text: '');
     final addressController = TextEditingController(text: '');
